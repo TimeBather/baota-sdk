@@ -3,6 +3,7 @@
 
 namespace BTSDK\Connections;
 
+use BTSDK\Exceptions\ClientException;
 use BTSDK\Interfaces\ServerConnection;
 use BTSDK\Transmission\APIRequest;
 use BTSDK\Transmission\APIResponse;
@@ -12,6 +13,7 @@ use BTSDK\Exceptions\NotSupportException;
 use BTSDK\Exceptions\ResponseDecodeException;
 use BTSDK\Exceptions\ServerException;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Psr7\Request;
 
@@ -29,6 +31,12 @@ class GuzzleServerConnection extends BaseServerConnection implements ServerConne
                 ]
             );
     }
+
+    /**
+     * 编码为Application POST体
+     * @param array $array 需要编码的数组
+     * @return string 编码好的URL
+     */
     protected function buildPostBodyData(array $array){
         $postData="";
         foreach($array as $k=>$v){
@@ -37,6 +45,19 @@ class GuzzleServerConnection extends BaseServerConnection implements ServerConne
         }
         return $postData;
     }
+
+
+    /**
+     * 发送请求方法
+     * @param APIRequest $request API请求
+     * @return APIResponse API响应
+     * @throws ClientException
+     * @throws CredentialError
+     * @throws NetworkException
+     * @throws NotSupportException
+     * @throws ResponseDecodeException
+     * @throws ServerException
+     */
     public function sendRequest(APIRequest $request)
     {
         $guzzleHttpRequest=new Request(
@@ -50,6 +71,8 @@ class GuzzleServerConnection extends BaseServerConnection implements ServerConne
             $guzzleHttpResponse=$this->httpClient->send($guzzleHttpRequest);
         }catch (TransferException $e){
             throw new NetworkException("GuzzleHttpError:".$e->getMessage());
+        }catch(GuzzleException $e){
+            throw new ClientException();
         }
         if($guzzleHttpResponse->getStatusCode()==302 && substr($guzzleHttpResponse->getHeaderLine("Location"),-5)=="login"){
                 throw new CredentialError();

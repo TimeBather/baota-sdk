@@ -6,5 +6,10 @@ namespace BTSDK\Interfaces;
 
 interface Credential
 {
-    public function getRequestToken($timestamp=null);
+    /**
+     * 获取请求Token
+     * @param int $timestamp
+     * @return string
+     */
+    public function getRequestToken($timestamp=-1);
 }

@@ -4,15 +4,27 @@
 namespace BTSDK\Connections;
 
 
+use BTSDK\Exceptions\NotSupportException;
 use BTSDK\Interfaces\ServerConnection;
 use BTSDK\Transmission\APIRequest;
+use BTSDK\Transmission\APIResponse;
 
 class FakeServerConnection extends BaseServerConnection implements ServerConnection
 {
 
+    /**
+     * 发送请求方法
+     * @param APIRequest $request API请求
+     * @return APIResponse
+     * @throws NotSupportException
+     * @return APIResponse API相应
+     */
     public function sendRequest(APIRequest $request)
     {
-        var_dump($request);
-        return [];
+        $operationConfigure=$request->requestOperation->getConfigure();
+        if(!isset($operationConfigure['fakeFactory']) || !class_exists($operationConfigure['fakeFactory'])){
+            throw new NotSupportException();
+        }
+        return new APIResponse();
     }
 }

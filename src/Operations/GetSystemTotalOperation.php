@@ -19,6 +19,12 @@ class GetSystemTotalOperation extends BaseOperation implements Operation
             'parameters'=>[]
         ];
     }
+
+    /**
+     * 发送后回调,用于解析参数
+     * @param APIResponse $response 原响应
+     * @return APIResponse 修改后响应
+     */
     public function beforeResponse(APIResponse $response)
     {
         $response=$this->beforeResponseProcess($response);

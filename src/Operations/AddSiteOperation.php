@@ -4,6 +4,7 @@
 namespace BTSDK\Operations;
 
 
+use BTSDK\Exceptions\ParameterRequiredException;
 use BTSDK\Operations\BaseOperation;
 use BTSDK\Interfaces\Operation;
 use BTSDK\Transmission\APIRequest;
@@ -12,6 +13,11 @@ use BTSDK\Traits\OperationUtils;
 class AddSiteOperation extends BaseOperation implements  Operation
 {
     use OperationUtils;
+
+    /**
+     * 获取当前Operation配置信息
+     * @return array 配置数组
+     */
     public function getConfigure()
     {
         return [
@@ -35,7 +41,14 @@ class AddSiteOperation extends BaseOperation implements  Operation
         ];
     }
 
-    public function beforeSend(APIRequest $request){
+    /**
+     * 发送前回调,用于动态修改/加入/检测参数
+     * @param APIRequest $request
+     * @return APIRequest
+     * @throws ParameterRequiredException
+     */
+    public function beforeSend(APIRequest $request)
+    {
         $request=$this->beforeSendProcess($request);
         return $request;
     }

@@ -11,6 +11,11 @@ use BTSDK\Transmission\APIRequest;
 class BaseServerConnection implements ServerConnection
 {
 
+    /**
+     * 发送请求方法
+     * @param APIRequest $request
+     * @throws NotImplementedException
+     */
     public function sendRequest(APIRequest $request)
     {
         throw new NotImplementedException();

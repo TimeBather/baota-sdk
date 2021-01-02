@@ -10,7 +10,12 @@ use BTSDK\Interfaces\Credential;
 class BaseCredential implements Credential
 {
 
-    public function getRequestToken($timestamp = null)
+    /**
+     * 获取请求Token
+     * @param int $timestamp
+     * @throws NotImplementedException
+     */
+    public function getRequestToken($timestamp = -1)
     {
         throw new NotImplementedException();
     }

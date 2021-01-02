@@ -1,0 +1,27 @@
+{
+  "name": "btd/bt-api",
+  "description": "An BaoTa Panel API Implements for PHP",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "xieyi1393",
+      "email": "2387911242@qq.com"
+    },
+    {
+      "name": "Youngxj",
+      "email": "1170535111@qq.com"
+    }
+
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "6.*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "BTSDK\\": "src/"
+    }
+  }
+}

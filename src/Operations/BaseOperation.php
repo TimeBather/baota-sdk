@@ -6,8 +6,8 @@ namespace BTSDK\Operations;
 
 use BTSDK\Exceptions\NotImplementedException;
 use BTSDK\Interfaces\Operation;
-use BTSDK\Transmission\APIRequest;
-use BTSDK\Transmission\APIResponse;
+use BTSDK\Transmissions\APIRequest;
+use BTSDK\Transmissions\APIResponse;
 
 class BaseOperation implements Operation
 {

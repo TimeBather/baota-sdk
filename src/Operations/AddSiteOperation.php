@@ -7,7 +7,7 @@ namespace BTSDK\Operations;
 use BTSDK\Exceptions\ParameterRequiredException;
 use BTSDK\Operations\BaseOperation;
 use BTSDK\Interfaces\Operation;
-use BTSDK\Transmission\APIRequest;
+use BTSDK\Transmissions\APIRequest;
 use BTSDK\Traits\OperationUtils;
 
 class AddSiteOperation extends BaseOperation implements  Operation

@@ -4,8 +4,8 @@
 namespace BTSDK\Interfaces;
 
 
-use BTSDK\Transmission\APIRequest;
-use BTSDK\Transmission\APIResponse;
+use BTSDK\Transmissions\APIRequest;
+use BTSDK\Transmissions\APIResponse;
 
 interface Operation
 {

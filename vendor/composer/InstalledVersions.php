@@ -24,24 +24,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'c2d8f761fd664eeb6b81ef2cebae70b2c1ccfdc5',
     'name' => 'btd/bt-api',
   ),
   'versions' => 
   array (
     'btd/bt-api' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'c2d8f761fd664eeb6b81ef2cebae70b2c1ccfdc5',
     ),
     'guzzlehttp/guzzle' => 
     array (

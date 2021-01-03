@@ -6,8 +6,8 @@ namespace BTSDK\Connections;
 
 use BTSDK\Exceptions\NotSupportException;
 use BTSDK\Interfaces\ServerConnection;
-use BTSDK\Transmission\APIRequest;
-use BTSDK\Transmission\APIResponse;
+use BTSDK\Transmissions\APIRequest;
+use BTSDK\Transmissions\APIResponse;
 
 class FakeServerConnection extends BaseServerConnection implements ServerConnection
 {

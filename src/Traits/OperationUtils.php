@@ -5,8 +5,8 @@ namespace BTSDK\Traits;
 
 
 use BTSDK\Exceptions\NotImplementedException;
-use BTSDK\Transmission\APIRequest;
-use BTSDK\Transmission\APIResponse;
+use BTSDK\Transmissions\APIRequest;
+use BTSDK\Transmissions\APIResponse;
 use BTSDK\Exceptions\InvalidParameterException;
 use BTSDK\Exceptions\ParameterRequiredException;
 

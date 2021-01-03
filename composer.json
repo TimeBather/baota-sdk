@@ -15,9 +15,18 @@
     }
 
   ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    }
+  ],
   "require": {
     "guzzlehttp/guzzle": "6.*",
     "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*"
   },
   "autoload": {
     "psr-4": {

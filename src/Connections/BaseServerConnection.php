@@ -6,7 +6,7 @@ namespace BTSDK\Connections;
 
 use BTSDK\Exceptions\NotImplementedException;
 use BTSDK\Interfaces\ServerConnection;
-use BTSDK\Transmission\APIRequest;
+use BTSDK\Transmissions\APIRequest;
 
 class BaseServerConnection implements ServerConnection
 {

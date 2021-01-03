@@ -6,7 +6,7 @@ namespace BTSDK\Operations;
 
 use BTSDK\Interfaces\Operation;
 use BTSDK\Traits\OperationUtils;
-use BTSDK\Transmission\APIResponse;
+use BTSDK\Transmissions\APIResponse;
 
 class GetSystemTotalOperation extends BaseOperation implements Operation
 {

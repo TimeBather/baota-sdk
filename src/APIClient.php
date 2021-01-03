@@ -5,7 +5,8 @@ namespace BTSDK;
 
 
 use BTSDK\Interfaces\Operation;
-use BTSDK\Transmission\APIRequest;
+use BTSDK\Interfaces\OperationResult;
+use BTSDK\Transmissions\APIRequest;
 use BTSDK\Interfaces\Credential;
 use BTSDK\Interfaces\ServerConnection;
 
@@ -28,9 +29,10 @@ class APIClient
     /**
      * 发送操作
      * @param Operation $operation 操作
-     * @return Transmission\APIResponse API响应
+     * @return ServerResult API响应
      */
     public function send(Operation $operation){
+        $operationConfigure=$operation->getConfigure();
         $request=new APIRequest();
         $timestamp=time();
         $request->body['request_time']=$timestamp;
@@ -40,6 +42,13 @@ class APIClient
         $request=$operation->beforeSend($request);
         $response=$this->connection->sendRequest($request);
         $response=$operation->beforeResponse($response);
-        return $response;
+        $operationResult=null;
+        if(isset($operationConfigure['operationResult'])&&class_exists($operationConfigure['operationResult'])){
+            if(in_array(OperationResult::class,class_implements($operationConfigure['operationResult']))){
+                $operationResult=new $operationConfigure['operationResult'];
+                $operationResult->parse($response);
+            }
+        }
+        return new ServerResult($response,$operationResult);
     }
 }

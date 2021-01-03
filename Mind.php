@@ -1,21 +1,20 @@
 <?php
 require_once "vendor/autoload.php";
-use \BTSDK\APIClient;
-use \BTSDK\Credentials\TokenCredential;
-use \BTSDK\Operations\AddSiteOperation;
-use \BTSDK\Connections\GuzzleServerConnection;
-use \BTSDK\Connections\FakeServerConnection;
+use BTSDK\APIClient;
+use BTSDK\Credentials\TokenCredential;
+use BTSDK\Operations\AddSiteOperation;
+use BTSDK\Connections\GuzzleServerConnection;
+use BTSDK\Connections\FakeServerConnection;
 use BTSDK\Operations\GetSystemTotalOperation;
 
 $token=new TokenCredential("*");
-$server=null;
-$server=new GuzzleServerConnection("****",30);
+$server=new FakeServerConnection();
+//$server=new GuzzleServerConnection("****",30);
 $client=new APIClient($server,$token);
 $getTotal=new GetSystemTotalOperation();
 
-
 try{
-    $response=$client->send($getTotal);
+    $response=$client->send($getTotal)->asResponse();
     var_dump($response->getResponse());
 }catch(\BTSDK\Exceptions\InvalidParameterException $e){
     print("参数错误");

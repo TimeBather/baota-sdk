@@ -5,8 +5,8 @@ namespace BTSDK\Connections;
 
 use BTSDK\Exceptions\ClientException;
 use BTSDK\Interfaces\ServerConnection;
-use BTSDK\Transmission\APIRequest;
-use BTSDK\Transmission\APIResponse;
+use BTSDK\Transmissions\APIRequest;
+use BTSDK\Transmissions\APIResponse;
 use BTSDK\Exceptions\CredentialError;
 use BTSDK\Exceptions\NetworkException;
 use BTSDK\Exceptions\NotSupportException;

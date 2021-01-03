@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Transmission;
+namespace BTSDK\Transmissions;
 
 
 class APIResponse

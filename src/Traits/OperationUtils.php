@@ -65,7 +65,7 @@ trait OperationUtils
             if(!isset($this->parameters[$parameter['displayName']]) && (isset($parameter['required']) && $parameter['required'])){
                 throw new ParameterRequiredException();
             }
-            $request->body[$parameter['name']]=$this->parameters[$parameter['displayName']];
+            if(isset($this->parameters[$parameter['displayName']]))$request->body[$parameter['name']]=$this->parameters[$parameter['displayName']];
         }
         return $request;
     }

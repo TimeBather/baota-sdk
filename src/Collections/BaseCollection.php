@@ -21,10 +21,12 @@ class BaseCollection implements ArrayAccess, Iterator
     {
         return isset($this->data[$offset]);
     }
-
     public function offsetGet($offset)
     {
-        // TODO: Implement offsetGet() method.
+        if(class_exists($this->source)){
+            return new $this->source($this->data[$offset]);
+        }
+        return $this->data[$offset];
     }
 
     public function offsetSet($offset, $value)
@@ -34,9 +36,9 @@ class BaseCollection implements ArrayAccess, Iterator
 
     public function offsetUnset($offset)
     {
-        throw new NotImplementedException();
+        throw new NotSupportException();
     }
-
+    protected $pointer=null;
     public function current()
     {
         // TODO: Implement current() method.
@@ -60,5 +62,8 @@ class BaseCollection implements ArrayAccess, Iterator
     public function rewind()
     {
         // TODO: Implement rewind() method.
+    }
+    public function first(){
+        return isset($this->data[0])?$this->offsetGet(0):null;
     }
 }

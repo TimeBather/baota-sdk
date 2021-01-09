@@ -89,6 +89,7 @@ class GuzzleServerConnection extends BaseServerConnection implements ServerConne
         if(json_last_error()!=JSON_ERROR_NONE){
             throw new ResponseDecodeException();
         }
+        //var_dump($responseJson);
         $response->fill($responseJson);
         return $response;
     }

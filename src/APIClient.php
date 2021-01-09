@@ -6,6 +6,9 @@ namespace BTSDK;
 
 use BTSDK\Interfaces\Operation;
 use BTSDK\Interfaces\OperationResult;
+use BTSDK\Models\BaseModel;
+use BTSDK\ServerResult\ServerResult;
+use BTSDK\Traits\Model;
 use BTSDK\Transmissions\APIRequest;
 use BTSDK\Interfaces\Credential;
 use BTSDK\Interfaces\ServerConnection;
@@ -24,6 +27,7 @@ class APIClient
     {
         $this->connection=$connection;
         $this->credential=$credential;
+        BaseModel::setDefaultConnection($this);
     }
 
     /**

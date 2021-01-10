@@ -12,7 +12,6 @@ class MiddleModel
     public function __construct($source,APIClient $client=null){
         $this->source=new $source;
         $this->source->setConnection($client==null?$this->source->getDefaultConnection():$client);
-
     }
     public function where($key,$value){
         $this->source->setOperationChainData('operation','where');

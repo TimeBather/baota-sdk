@@ -29,6 +29,7 @@ class SiteModel extends BaseModel implements Model
         $operation->searchKeyword=$this->operationChain['value'];
         $response=$this->currentConnection->send($operation)->asRawArray();
         $resultArray=[];
+        // TODO 宝塔面板API接口IP白名单错误拦截
         foreach($response['data'] as $v){
             if($v[$this->operationChain['key']]==$this->operationChain['value']){
                 array_push($resultArray,$v);

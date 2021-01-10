@@ -8,6 +8,7 @@ use BTSDK\Connections\GuzzleServerConnection;
 use BTSDK\Connections\FakeServerConnection;
 use BTSDK\Operations\GetSitesOperation;
 use BTSDK\Operations\GetSystemTotalOperation;
+use BTSDK\Operations\Site\AddDomainOperation;
 $token=new TokenCredential("7Vnnk8mfzSvJXrADDsJ10iSU0CdzRnbe");
 $server=new GuzzleServerConnection("http://admin.dingtalkapp.bcsite.cn:8888/",30);
 $client=new APIClient($server,$token);

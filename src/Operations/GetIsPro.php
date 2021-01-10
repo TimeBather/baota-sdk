@@ -9,17 +9,19 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 添加网站域名
+ * 重启面板
  */
-class AddDomainOperation extends BaseOperation implements Operation
+class GetIsPro extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=AddDomain',
+            'url' => '/config?action=is_pro',
             'method' => 'POST',
-            'parameters' => []
+            'parameters' => [
+                ["name" => "action", "displayName" => "action", "required" => true, 'default' => 'ReWeb'],
+            ]
         ];
     }
 

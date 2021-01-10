@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations;
+namespace BTSDK\Operations\Site;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,15 +9,15 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 添加网站分类
+ * 添加网站域名
  */
-class AddSiteTypeOperation extends BaseOperation implements Operation
+class AddDomainOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=add_site_type',
+            'url' => '/site?action=AddDomain',
             'method' => 'POST',
             'parameters' => []
         ];

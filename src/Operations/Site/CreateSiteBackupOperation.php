@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations;
+namespace BTSDK\Operations\Site;
 
 
 use BTSDK\Interfaces\Operation;

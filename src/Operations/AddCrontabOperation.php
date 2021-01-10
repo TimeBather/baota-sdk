@@ -11,7 +11,7 @@ use BTSDK\Transmissions\APIResponse;
 /**
  * 添加计划任务
  */
-class GetIsProOperation extends BaseOperation implements Operation
+class AddCrontabOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()

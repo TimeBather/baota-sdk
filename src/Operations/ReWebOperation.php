@@ -9,18 +9,18 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 重启面板
+ * 面板修复
  */
-class GetIsPro extends BaseOperation implements Operation
+class ReWebOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/config?action=is_pro',
+            'url' => '/system?action=ReWeb',
             'method' => 'POST',
             'parameters' => [
-                ["name" => "action", "displayName" => "action", "required" => true, 'default' => 'ReWeb'],
+                ["name" => "action", "displayName" => "action", "required" => true, 'default' => 'RepPanel'],
             ]
         ];
     }

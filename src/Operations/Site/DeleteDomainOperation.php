@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations;
+namespace BTSDK\Operations\Site;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,19 +9,17 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 面板修复
+ * 删除网站域名
  */
-class ReWebOperation extends BaseOperation implements Operation
+class DeleteDomainOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/system?action=ReWeb',
+            'url' => '/site?action=DelDomain',
             'method' => 'POST',
-            'parameters' => [
-                ["name" => "action", "displayName" => "action", "required" => true, 'default' => 'RepPanel'],
-            ]
+            'parameters' => []
         ];
     }
 

@@ -16,14 +16,13 @@
 
   ],
   "repositories": [
-    {
-      "type": "composer",
-      "url": "https://mirrors.aliyun.com/composer/"
-    }
+
   ],
   "require": {
     "guzzlehttp/guzzle": "6.*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "phpenum/phpenum": "1.4.0",
+    "webmozart/path-util": "2.3.0"
   },
   "require-dev": {
     "phpunit/phpunit": "*"

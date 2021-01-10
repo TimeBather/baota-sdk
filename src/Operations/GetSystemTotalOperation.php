@@ -8,6 +8,9 @@ use BTSDK\Interfaces\Operation;
 use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
+/**
+ * 获取系统基础统计
+ */
 class GetSystemTotalOperation extends BaseOperation implements Operation
 {
     use OperationUtils;

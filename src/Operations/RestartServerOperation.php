@@ -9,17 +9,19 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 检查专业版
+ * 重启服务器
  */
-class GetIsPro extends BaseOperation implements Operation
+class RestartServerOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/config?action=is_pro',
+            'url' => '/system?action=RestartServer',
             'method' => 'POST',
-            'parameters' => []
+            'parameters' => [
+                ["name" => "action", "displayName" => "action", "required" => true, 'default' => 'RestartServer'],
+            ]
         ];
     }
 

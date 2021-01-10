@@ -8,6 +8,9 @@ use BTSDK\Interfaces\Operation;
 use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
+/**
+ * 获取面板配置
+ */
 class GetConfig extends BaseOperation implements Operation
 {
     use OperationUtils;

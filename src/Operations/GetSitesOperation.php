@@ -7,6 +7,9 @@ namespace BTSDK\Operations;
 use BTSDK\Interfaces\Operation;
 use BTSDK\Traits\OperationUtils;
 
+/**
+ * 获取站点数据
+ */
 class GetSitesOperation extends BaseOperation implements Operation
 {
     use OperationUtils;

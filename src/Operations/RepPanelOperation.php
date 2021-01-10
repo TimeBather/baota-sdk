@@ -9,17 +9,19 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 获取/刷新服务器配置（完整）
+ * 面板修复
  */
-class GetSystemGetConcifInfo extends BaseOperation implements Operation
+class ReWebOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/system?action=GetConcifInfo',
+            'url' => '/system?action=ReWeb',
             'method' => 'POST',
-            'parameters' => []
+            'parameters' => [
+                ["name" => "action", "displayName" => "action", "required" => true, 'default' => 'RepPanel'],
+            ]
         ];
     }
 

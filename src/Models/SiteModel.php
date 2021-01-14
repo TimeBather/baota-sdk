@@ -9,7 +9,7 @@ use BTSDK\Definitions\SiteStatus;
 use BTSDK\Exceptions\NotSupportException;
 use BTSDK\Handlers\ParseHandler;
 use BTSDK\Interfaces\Model;
-use BTSDK\Operations\GetSitesOperation;
+use BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Files\Files\Files\Files\Files\Data\Crontab\Crontab\Crontab\GetSitesOperation;
 use BTSDK\Traits\Model as ModelTrait;
 use BTSDK\Types\Path;
 

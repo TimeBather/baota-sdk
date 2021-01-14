@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
+namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,22 +9,20 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 删除网站域名
+ * 获取网站目录
  */
-class DeleteDomainOperation extends BaseOperation implements Operation
+class GetSiteRunPathOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=DelDomain',
+            'url' => '/data?action=getKey',
             'method' => 'POST',
             'parameters' => [
                 ['name'=>'id','displayName'=>'id','required'=>true],
-                ['name'=>'webname','displayName'=>'webname','required'=>true],
-                ['name'=>'domain','displayName'=>'domain','required'=>true],
-                ['name'=>'port','displayName'=>'port','required'=>true],
-
+                ['name'=>'key','displayName'=>'key','required'=>true],
+                ['name'=>'table','displayName'=>'table','required'=>true],
             ]
         ];
     }

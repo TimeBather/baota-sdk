@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Site;
+namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
 
 
 use BTSDK\Interfaces\Operation;
@@ -16,10 +16,20 @@ class AddDomainOperation extends BaseOperation implements Operation
     use OperationUtils;
     public function getConfigure()
     {
+        // API接口请求参数
+        $get = [
+            'action'=>'AddDomain',
+        ];
+        // 当前目录名转换小写，获取接口地址并拼接完整API请求接口
+        $url = '/'.mb_strtolower(getcwd()).'?'.http_build_query($get);
         return [
-            'url' => '/site?action=AddDomain',
+            'url' => $url,
             'method' => 'POST',
-            'parameters' => []
+            'parameters' => [
+                ['name'=>'id','displayName'=>'id','required'=>true],
+                ['name'=>'webname','displayName'=>'webname','required'=>true],
+                ['name'=>'domain','displayName'=>'domain','required'=>true],
+            ]
         ];
     }
 

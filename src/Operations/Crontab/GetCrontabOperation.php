@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
+namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Files\Files\Files\Files\Files\Data\Crontab\Crontab;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,19 +9,17 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 创建网站备份
+ * 计划任务列表
  */
-class CreateSiteBackupOperation extends BaseOperation implements Operation
+class GetCrontabOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=ToBackup',
+            'url' => '/crontab?action=GetCrontab',
             'method' => 'POST',
-            'parameters' => [
-                ['name'=>'id','displayName'=>'id','required'=>true],
-            ]
+            'parameters' => []
         ];
     }
 

@@ -9,22 +9,18 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 删除网站域名
+ * 关闭网站密码访问
  */
-class DeleteDomainOperation extends BaseOperation implements Operation
+class CloseHasPwdOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=DelDomain',
+            'url' => '/site?action=CloseHasPwd',
             'method' => 'POST',
             'parameters' => [
                 ['name'=>'id','displayName'=>'id','required'=>true],
-                ['name'=>'webname','displayName'=>'webname','required'=>true],
-                ['name'=>'domain','displayName'=>'domain','required'=>true],
-                ['name'=>'port','displayName'=>'port','required'=>true],
-
             ]
         ];
     }

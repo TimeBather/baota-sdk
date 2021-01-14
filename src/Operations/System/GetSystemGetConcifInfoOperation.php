@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
+namespace BTSDK\Operations\Database\System\System\System\System\System;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,19 +9,17 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 创建网站备份
+ * 获取/刷新服务器配置（完整）
  */
-class CreateSiteBackupOperation extends BaseOperation implements Operation
+class GetSystemGetConcifInfoOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=ToBackup',
+            'url' => '/system?action=GetConcifInfo',
             'method' => 'POST',
-            'parameters' => [
-                ['name'=>'id','displayName'=>'id','required'=>true],
-            ]
+            'parameters' => []
         ];
     }
 

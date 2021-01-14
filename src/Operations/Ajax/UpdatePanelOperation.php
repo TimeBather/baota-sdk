@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
+namespace BTSDK\Operations\Config\Ajax;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,18 +9,19 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 创建网站备份
+ * 检查面板更新
  */
-class CreateSiteBackupOperation extends BaseOperation implements Operation
+class UpdatePanelOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=ToBackup',
+            'url' => '/ajax?action=UpdatePanel',
             'method' => 'POST',
             'parameters' => [
-                ['name'=>'id','displayName'=>'id','required'=>true],
+                ['name'=>'check','displayName'=>'check'],
+                ['name'=>'force','displayName'=>'force'],
             ]
         ];
     }

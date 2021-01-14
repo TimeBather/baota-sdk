@@ -5,11 +5,16 @@ namespace BTSDK\Operations\Site;
 
 
 use BTSDK\Exceptions\ParameterRequiredException;
-use BTSDK\Operations\BaseOperation;
+use BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Files\Files\Files\Files\Files\Data\Crontab\Crontab\Crontab\BaseOperation;
 use BTSDK\Interfaces\Operation;
 use BTSDK\Transmissions\APIRequest;
 use BTSDK\Traits\OperationUtils;
 
+/**
+ * 添加网站
+ * Class AddSiteOperation
+ * @package BTSDK\Operations\Site
+ */
 class AddSiteOperation extends BaseOperation implements  Operation
 {
     use OperationUtils;

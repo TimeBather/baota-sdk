@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
+namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Files\Files\Files;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,18 +9,18 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 创建网站备份
+ * 获取面板日志大小
  */
-class CreateSiteBackupOperation extends BaseOperation implements Operation
+class GetDirSizeOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=ToBackup',
+            'url' => '/files?action=GetDirSize',
             'method' => 'POST',
             'parameters' => [
-                ['name'=>'id','displayName'=>'id','required'=>true],
+                ['name'=>'path','displayName'=>'path','required'=>true,'default'=>'/www/wwwlogs'],
             ]
         ];
     }

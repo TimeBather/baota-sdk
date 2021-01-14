@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
+namespace BTSDK\Operations\Database\System;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,18 +9,19 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 创建网站备份
+ * 系统服务
  */
-class CreateSiteBackupOperation extends BaseOperation implements Operation
+class ServiceAdminOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=ToBackup',
+            'url' => '/system?action=ServiceAdmin',
             'method' => 'POST',
             'parameters' => [
-                ['name'=>'id','displayName'=>'id','required'=>true],
+                ['name'=>'name','displayName'=>'name','required'=>true],
+                ['name'=>'type','displayName'=>'type','required'=>true],
             ]
         ];
     }

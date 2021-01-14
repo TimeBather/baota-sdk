@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
+namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,22 +9,19 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 删除网站域名
+ * 设置网站分类
  */
-class DeleteDomainOperation extends BaseOperation implements Operation
+class SetSiteTypeOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=DelDomain',
+            'url' => '/site?action=set_site_type',
             'method' => 'POST',
             'parameters' => [
                 ['name'=>'id','displayName'=>'id','required'=>true],
-                ['name'=>'webname','displayName'=>'webname','required'=>true],
-                ['name'=>'domain','displayName'=>'domain','required'=>true],
-                ['name'=>'port','displayName'=>'port','required'=>true],
-
+                ['name'=>'site_ids','displayName'=>'site_ids','required'=>true],
             ]
         ];
     }

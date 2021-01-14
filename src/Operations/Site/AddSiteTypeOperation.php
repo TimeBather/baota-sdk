@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Site;
+namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
 
 
 use BTSDK\Interfaces\Operation;
@@ -19,7 +19,9 @@ class AddSiteTypeOperation extends BaseOperation implements Operation
         return [
             'url' => '/site?action=add_site_type',
             'method' => 'POST',
-            'parameters' => []
+            'parameters' => [
+                ['name'=>'name','displayName'=>'name','required'=>true],
+            ]
         ];
     }
 

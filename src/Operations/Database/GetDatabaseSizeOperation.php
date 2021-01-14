@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
+namespace BTSDK\Operations\Database;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,21 +9,22 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 创建网站备份
+ * 计算数据库大小
  */
-class CreateSiteBackupOperation extends BaseOperation implements Operation
+class GetDatabaseSizeOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=ToBackup',
+            'url' => '/database?action=GetInfo',
             'method' => 'POST',
             'parameters' => [
-                ['name'=>'id','displayName'=>'id','required'=>true],
+                ['name'=>'db_name','displayName'=>'db_name','required'=>true],
             ]
         ];
     }
+
 
     /**
      * 发送后回调,用于解析参数

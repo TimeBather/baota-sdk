@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
+namespace BTSDK\Operations\Database\System\System\System\System\System\System\System\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site\Site;
 
 
 use BTSDK\Interfaces\Operation;
@@ -9,19 +9,17 @@ use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 
 /**
- * 创建网站备份
+ * 获取已安装的 PHP 版本列表
  */
-class CreateSiteBackupOperation extends BaseOperation implements Operation
+class GetPhpVersionOperation extends BaseOperation implements Operation
 {
     use OperationUtils;
     public function getConfigure()
     {
         return [
-            'url' => '/site?action=ToBackup',
+            'url' => '/site?action=GetPHPVersion',
             'method' => 'POST',
-            'parameters' => [
-                ['name'=>'id','displayName'=>'id','required'=>true],
-            ]
+            'parameters' => []
         ];
     }
 

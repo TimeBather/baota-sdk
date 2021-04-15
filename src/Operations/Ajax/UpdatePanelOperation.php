@@ -1,10 +1,11 @@
 <?php
 
 
-namespace BTSDK\Operations\Config\Ajax;
+namespace BTSDK\Operations\Ajax;
 
 
 use BTSDK\Interfaces\Operation;
+use BTSDK\Operations\BaseOperation;
 use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 

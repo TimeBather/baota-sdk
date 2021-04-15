@@ -135,7 +135,7 @@ class ComposerStaticInit5fd7f0b03f4b4de7f9f9a887dccdbcfc
         'BTSDK\\Connections\\GuzzleServerConnection' => __DIR__ . '/../..' . '/src/Connections/GuzzleServerConnection.php',
         'BTSDK\\Credentials\\BaseCredential' => __DIR__ . '/../..' . '/src/Credentials/BaseCredential.php',
         'BTSDK\\Credentials\\TokenCredential' => __DIR__ . '/../..' . '/src/Credentials/TokenCredential.php',
-        'BTSDK\\Definitions\\SiteStatus' => __DIR__ . '/../..' . '/src/Definitions/SiteStatus.php',
+        'BTSDK\\Definitions\\SiteStatus' => __DIR__ . '/../..',
         'BTSDK\\Exceptions\\BaseException' => __DIR__ . '/../..' . '/src/Exceptions/BaseException.php',
         'BTSDK\\Exceptions\\ClientException' => __DIR__ . '/../..' . '/src/Exceptions/ClientException.php',
         'BTSDK\\Exceptions\\CredentialError' => __DIR__ . '/../..' . '/src/Exceptions/CredentialError.php',

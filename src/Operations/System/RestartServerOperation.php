@@ -1,10 +1,11 @@
 <?php
 
 
-namespace BTSDK\Operations\Database\System\System\System;
+namespace BTSDK\Operations\System;
 
 
 use BTSDK\Interfaces\Operation;
+use BTSDK\Operations\BaseOperation;
 use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 

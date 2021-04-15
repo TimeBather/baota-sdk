@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BTSDK\Definitions;
+namespace BTSDK\Enums;
 
 
 use BTSDK\Interfaces\ConstantDefinition;

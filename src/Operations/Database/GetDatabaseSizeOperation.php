@@ -5,6 +5,7 @@ namespace BTSDK\Operations\Database;
 
 
 use BTSDK\Interfaces\Operation;
+use BTSDK\Operations\BaseOperation;
 use BTSDK\Traits\OperationUtils;
 use BTSDK\Transmissions\APIResponse;
 

@@ -1,6 +1,6 @@
 {
-  "name": "btd/bt-api",
-  "description": "An BaoTa Panel API Implements for PHP",
+  "name": "xieyi1393/baota-sdk",
+  "description": "An BaoTa Panel SDK Implements for PHP",
   "minimum-stability": "dev",
   "license": "MIT",
   "type": "library",
